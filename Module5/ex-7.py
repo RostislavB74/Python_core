@@ -1,0 +1,7 @@
+first_set = set("Ilon Mask")
+second_set = set("Stieve Jobs")
+print(first_set & second_set)
+print(first_set | second_set)
+print(first_set ^ second_set)
+print(first_set.difference(second_set))
+print(first_set - second_set)
