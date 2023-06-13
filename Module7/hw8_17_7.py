@@ -1,8 +1,9 @@
 import re
 def token_parser(s):
+    new_list=[]
     if s:
         list_param_str =[]
-        new_list=[]
+        
         word=''
         lexema=['*', '/', '-', '+', '(', ')']
         clean_s= s.replace(' ','')
@@ -27,25 +28,13 @@ def token_parser(s):
         #         continue
         #     new_list.append(i)
 
-        # for j in range(len(list_param_str)):
-        #     if list_param_str[j] not in lexema:
-        #         word+=list_param_str[j]
-        #         new_list.append(word)
-        #     else:    
-        #         new_list.append(list_param_str[j])
-            
-        #print(new_list)
-
-            
-        #list_param_str1=re.findall('\d+',clean_s)
-    
-        
+        new_list.append(word)
     
         return new_list
     else:
-        return False
+        return new_list
                 
             
-param_str= " 2+ (34-5) * 3 " # ['2', '+', '34', '-', '5', '*', '3']
+param_str= " 2+ 34-5 * 3 " # ['2', '+', '34', '-', '5', '*', '3']
 print (token_parser(param_str))
     
