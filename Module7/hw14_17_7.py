@@ -2,9 +2,12 @@ def to_indexed(source_file, output_file):
     with open(source_file, 'r') as fh:
         key_list=[]
         lines = fh.readlines()
-        lines = [line.rstrip() for line in lines]
+        #lines = [line.rstrip() for line in lines]
         print(lines)
     with open(output_file, 'w') as f2:
+        for elem in lines:
+            f2.write(f'{lines.index(elem)}: {elem}')
+
             
             # if line:
             #     if line.find(profession) > 0:
@@ -15,7 +18,7 @@ def to_indexed(source_file, output_file):
             #         stroka = " ".join(new_list)
             # else: 
             #     return 
-     return
+    return
     
 
 
@@ -25,8 +28,8 @@ def to_indexed(source_file, output_file):
 
 
 
+source_file='Module7\source_14.txt'
+output_file='Module7\output_14.txt'
 
-
-
-#to_indexed(source_file, output_file)
+to_indexed(source_file, output_file)
     
