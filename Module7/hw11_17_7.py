@@ -17,9 +17,9 @@ def get_keys_num(bukva):
     num = ''
     for key, values in phone.items():
         if bukva in values:
-            for j in range(len(values)):
-                if bukva == values[j]:
-                    num = str(key)*(j+1)
+            #for j in range(len(values)):
+            #    if bukva == values[j]:
+            num = str(key)*(values.index(bukva)+1)
                     # print(num)
             return num
 
@@ -39,3 +39,6 @@ def sequence_buttons(string):
 
 string = "Hello, World!"
 print(sequence_buttons(string))
+
+        
+        
