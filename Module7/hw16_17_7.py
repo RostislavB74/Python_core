@@ -1,24 +1,13 @@
 list_data = ["X", "X", "X", "Z", "Z", "X", "X", "Y", "Y", "Y", "Z", "Z"]
 str_data = "XXXZZXXYYYZZ"
 
-new_list = []
-
-
 def decode(data):
-    if data == []:
-        return data
-    new_list.append(data[0])
-    count = 1
-    for i in range(1, len(data)):
-        if data[i] == data[i-1]:
-            count += 1
-        else:
-            new_list.append(count)
-            new_list.append(data[i])
-            count = 1
-    new_list.append(count)
+    new_list = []
+    print (data)
+    if len(data) >0:
+        list_1 = list(data[0])* data[1]
+        list_2 = decode (data[2:])
+        new_list = list_1+ list(list_2)
     return new_list
-
-
-data = list_data
+data = str_data
 print(decode(data))
