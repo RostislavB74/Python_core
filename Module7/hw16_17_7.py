@@ -1,5 +1,6 @@
-list_data = ["X", "X", "X", "Z", "Z", "X", "X", "Y", "Y", "Y", "Z", "Z"]
-str_data = "XXXZZXXYYYZZ"
+#list_data = ["X", "X", "X", "Z", "Z", "X", "X", "Y", "Y", "Y", "Z", "Z"]
+#str_data = "XXXZZXXYYYZZ"
+str_data = ["X", 3, "Z", 2, "X", 2, "Y", 3, "Z", 2 ]
 
 def decode(data):
     new_list = []
