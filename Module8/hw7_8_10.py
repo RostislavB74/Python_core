@@ -14,15 +14,13 @@ def convert_list(cats):
             cats_dict["age"]=(i.age)
             cats_dict["owner"]=(i.owner)
             cats_list.append(cats_dict)
-        return(cats_list)
-    # if isinstance(cats, dict):
-    #        for i in cats:
-    #         cats_dict=[]
-    #         cats_dict["nickname"]=(i.nickname)
-    #         cats_dict["age"]=(i.age)
-    #         cats_dict["owner"]=(i.owner)
-    #         cats_list.append(cats_dict)
-    #     return(cats_list)
+        print(cats_list)
+            # print(i.owner)
+        
+
+            
+        #print(cats.Cat)
+        
             
 convert_list(cats)
             
