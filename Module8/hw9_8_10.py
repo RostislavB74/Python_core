@@ -1,13 +1,7 @@
 from collections import deque
 
-MAX_LEN = 5
-
-lifo = deque()
-lifo.append('second')
-lifo.append('third')
-lifo.append('forth')
-lifo.append("4")
-element = 'first'
+MAX_LEN = 10
+lifo = deque(maxlen=MAX_LEN)
 
 
 def push(element):
@@ -15,11 +9,9 @@ def push(element):
     return lifo
 
 
-def pop(lifo):
-    lifo.popleft('first')
-
-    return lifo
+def pop():
+    return (lifo.popleft())
 
 
-print(push(element))
-print(pop(lifo))
+# push(element)
+# pop()
