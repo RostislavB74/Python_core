@@ -21,5 +21,5 @@ def pop(lifo):
     return lifo
 
 
-push(element)
-pop(lifo)
+print(push(element))
+print(pop(lifo))
