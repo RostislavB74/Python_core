@@ -1,11 +1,10 @@
 import collections
 
-#[Cat(nickname='Mick', age=5, owner='Sara'), Cat(nickname='Barsik', age=7, owner='Olga'), Cat(nickname='Simon', age=3, owner='Yura')]
+
 Cat = collections.namedtuple("Cat", ["nickname", "age", "owner"])
-Cat1 = collections.namedtuple("Cat", ["nickname", "age", "owner"])
 #cats_dict=collections.namedtuple("nickname":'nickname', "age":'age', "owner":'owner')
 #cats=[Cat("Mick", 5, "Sara"), Cat("Barsik", 7, "Olga"), Cat("Simon", 3, "Yura")]
-cats=[{'nickname': 'Mick', 'age': 5, 'owner': 'Sara'}, {'nickname': 'Barsik', 'age': 7, 'owner': 'Olga'}, {'nickname': 'Simon', 'age': 3, 'owner': 'Yura'}]
+#cats=[{'nickname': 'Mick', 'age': 5, 'owner': 'Sara'}, {'nickname': 'Barsik', 'age': 7, 'owner': 'Olga'}, {'nickname': 'Simon', 'age': 3, 'owner': 'Yura'}]
 def convert_list(cats):
    
     cats_list=[]
@@ -26,7 +25,5 @@ def convert_list(cats):
     return cats_list
            
             
-print(convert_list(cats))
-            
-        
+#print(convert_list(cats))        
     

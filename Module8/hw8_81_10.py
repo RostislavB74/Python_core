@@ -15,10 +15,12 @@ def get_count_visits_from_ip(ips):
 print(get_count_visits_from_ip(ips))
 
 def get_frequent_visit_from_ip(ips):
-    ip_count = collections.Counter(ips)
-    ip_tuple=ip_count.most_common()
-    #print(ip_count1.most_common())
-    return ip_tuple
+    ip_count=()
+    ip_count=collections.Counter(ips)
+    ips_count=ip_count.most_common()
+    for i in ips_count:
+        return i
+    print (ips_count)
 
 #ips_1=(get_count_visits_from_ip(ips))
 print(get_frequent_visit_from_ip(ips))
