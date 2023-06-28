@@ -14,7 +14,7 @@ def get_discount_price_customer(price, customer):
             # if key and values:
 
             #     price = price * (1 - )
-        return price
+            return price
 
 
 print(get_discount_price_customer(price, customer))
