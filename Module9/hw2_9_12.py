@@ -1,32 +1,26 @@
 DEFAULT_DISCOUNT = 0.05
-customer_list = [{'name': "Dima", 'discount': 0.0},
-                 {'name': 'Boris', 'discount': 0.15}]
+customer_list = [{'name': "Dima"}, {'name': 'Boris', 'discount': 0.15}]
 price = 100
 
 
 def get_discount_price_customer(price, customer):
+    for customer in customer_list:
+        for keys in customer:
+            name = keys[0]
+            if keys == 'discount':
+                if customer_list[keys].isdigit:
+                    price = price * (1 - customer_list['discount'])
+                    print(f'{name}: {price}')
+            else:
 
-    if customer in customer_list:
-        print(customer)
-        if customer_list['discount']:
-            price = price * (1 - customer_list['discount'])
-    price_discout = price * (1 - DEFAULT_DISCOUNT)
-    return customer_list['name'], price_discout
+                price = price * (1 - DEFAULT_DISCOUNT)
+                print(f'{name}: {price}')
+            continue
+            # if key and values:
 
-#   if keys == 'discount':
-#             if customer_list[keys]:
-#                 price = price * (1 - customer_list['discount'])
-#                 print(f'{name}: {price}')
-#         else:
-
-#             price = price * (1 - DEFAULT_DISCOUNT)
-#             print(f'{name}: {price}')
-#         continue
-#         # if key and values:
-
-#         #     price = price * (1 - )
-# return price
+            #     price = price * (1 - )
+    return price
 
 
-customer = 'Boris'
+customer = 'Dima'
 print(get_discount_price_customer(price, customer))
