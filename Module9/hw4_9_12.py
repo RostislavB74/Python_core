@@ -3,12 +3,12 @@ price = 100
 
 def discount_price(discount):
     result = price * (1 - discount)
-    print(result)
+    # print(result)
     return result
 
 
 def main():
-    calc = discount_price()
+    # calc = discount_price()
     print(cost_15(price))
     print(cost_10(price))
     print(cost_05(price))
