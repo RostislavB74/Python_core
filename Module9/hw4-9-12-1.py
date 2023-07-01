@@ -8,9 +8,9 @@ def discount_price(discount):
 
 
 DISCOUNT = {
-    cost_15: 0.15,
-    cost_10: 0.1,
-    cost_05: 0.05
+    'cost_15': 0.15,
+    'cost_10': 0.1,
+    'cost_05': 0.05
 }
 
 
