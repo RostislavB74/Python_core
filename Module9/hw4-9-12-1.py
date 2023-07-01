@@ -7,6 +7,13 @@ def discount_price(discount):
     return result
 
 
+DISCOUNT = {
+    cost_15: 0.15,
+    cost_10: 0.1,
+    cost_05: 0.05
+}
+
+
 def main():
     calc = discount_price()
     print(calc(0.15))
