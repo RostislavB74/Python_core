@@ -24,12 +24,12 @@ def get_cache(cache=None):
                 if i <= 1:
                     cache[i] = 1
                     continue
-                # print(f'i={i}')
-                # print(cache[i-1])
+                print(f'i={i}')
+                print(cache[i-1])
                 cache[i] = cache[i-1] + cache[i-2]
-                # print(cache)
+                print(cache)
 
-                # print(f'hard work {n}')
+                print(f'hard work {n}')
         else:
             print(f'easy work {n}')
         return cache.values()
