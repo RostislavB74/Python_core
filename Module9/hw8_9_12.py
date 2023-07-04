@@ -11,7 +11,7 @@ new_list = []
 
 def get_emails(list_contacts):
     # for i in map(lambda elem: new_list.append(elem['email']), user):
-    for i in map(lambda elem: print(elem), list_contacts.items()):
+    for i in map(lambda elem: print(elem('email')), list_contacts.items()):
         print()
         # print(new_list)
 
