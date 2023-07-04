@@ -1,16 +1,22 @@
 import re
-def generator_numbers(string="'The resulting profit was: from the southern possessions $ 10, from the northern colonies $50, and the king gave $100."):
-    num_list=re.findall('\d+', string)
-    i=0
-    res=0
-    
+string = "'The resulting profit was: from the southern possessions $ 10, from the northern colonies $50, and the king gave $100."
+
+
+def generator_numbers(string):
+    i = 0
+    num_list = re.findall("\d+", string)
     while i < len(num_list):
-        res+=sum_profit(num_list[i])
-        i+=1
-    yield res
+        # print(num_list[i])
+        yield int(num_list[i])
+        i += 1
+
 
 def sum_profit(string):
-    return int(string)
+    sum = 0
+    for x in generator_numbers(string):
+        # print(x)
+        sum += x
+    return sum
 
-print(next(generator_numbers()))        
-    
+
+print(sum_profit(string))
