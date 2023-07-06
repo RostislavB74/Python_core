@@ -8,8 +8,8 @@ class ValueSearchableDict(UserDict):
 
 as_dict = ValueSearchableDict()
 as_dict['a'] = 1
-as_dict.has_in_values(1)  # True
-as_dict.has_in_values(2)  # False
+print(as_dict.has_in_values(1))  # True
+print(as_dict.has_in_values(2))  # False
 
 
 class CountableList(UserList):

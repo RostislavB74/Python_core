@@ -11,16 +11,27 @@ class LookUpKeyDict(UserDict):
         self.value = value
         self.data = data
         super().__init__(data)
-
-    def lookup_key(self, value, data):
+        
+    def lookup_key(self, key, data):
         keys = []
         for key in data:
             if data[key] == value:
                 keys.append(key)
-
         return keys
 
 
 as_dict = UserDict()
 as_dict['a'] = 1
-print(as_dict.data())
+as_dict['b'] = 2
+print(as_dict.data)
+key1=LookUpKeyDict()
+key1.lookup_key=('v', as_dict)
+print(key1.lookup_key())
+
+#keys_list =LookUpKeyDict()
+
+#print(keys_list.lookup_key())
+#data1=LookUpKeyDict()
+#data1.lookup_key['b']=2
+
+
