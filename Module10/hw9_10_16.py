@@ -2,36 +2,29 @@ from collections import UserDict
 
 
 class UserDict(UserDict):
-
+    # def __init__(self, data):
     data = dict()
 
 
 class LookUpKeyDict(UserDict):
-    def __init__(self, data, value):
+    def __init__(self, value):
+        super().__init__(dict)
         self.value = value
-        self.data = data
-        super().__init__(data)
-        
-    def lookup_key(self, value, data):
+        self.data = dict
+
+    def lookup_key(self, data, value):
         keys = []
-        for key in data:
-            if data[key] == value:
-                keys.append(key)
-        return print(keys)
+        for i in self.data:
+            print(i)
+            if i == value:
+                keys.append(i)
+        return keys
+        # return value in self.data.keys()
 
 
 as_dict = UserDict()
-as_dict.data['a'] = 1
-as_dict.data['b'] = 2
-
-key1=LookUpKeyDict(self)
-key1.lookup_key=('v', as_dict)
-
-
-keys_list =LookUpKeyDict()
-
-print(keys_list.lookup_key())
-data1=LookUpKeyDict()
-data1.lookup_key['b']=2
-
-
+as_dict['a'] = 1
+as_dict['b'] = 2
+y = LookUpKeyDict()
+y.lookup_key = (as_dict, 'v')
+print(y.lookup_key())
