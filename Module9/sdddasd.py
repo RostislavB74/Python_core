@@ -4,11 +4,16 @@ def get_emails(list_contacts):
     new_list=[]
     for elem in list_contacts:
         return elem['email']
-def add_email(users):
-    return list(map(get_emails,users))
-    #print(res)
-print(add_email(users))
-
+# def add_email(users):
+res= map(get_emails,users)
+list (res)     #print(res)
+# def square(number):
+# ...       return number ** 2
+# ...
+# >>> numbers = [1, 2, 3, 4, 5]
+# >>> squared = map(square, numbers)
+# >>> list(squared)
+# [1, 4, 9, 16, 25]
 
 
 

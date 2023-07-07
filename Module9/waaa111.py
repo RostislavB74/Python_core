@@ -9,3 +9,13 @@ def add_email(users):
     res =get_emails(users)
     return res 
 print(add_email(users))
+
+
+
+# def square(number):
+# ...       return number ** 2
+# ...
+# >>> numbers = [1, 2, 3, 4, 5]
+# >>> squared = map(square, numbers)
+# >>> list(squared)
+# [1, 4, 9, 16, 25]
