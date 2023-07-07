@@ -7,8 +7,9 @@ def add(x, y):
 
 
 def amount_payment(payment):
-
-    result = reduce(add, payment, 0)
+    list_b = [x for x in payment if x > 0]
+    # print(list_b)
+    result = reduce(add, list_b, 0)
     return result
 
 
