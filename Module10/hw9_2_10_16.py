@@ -6,14 +6,15 @@ class UserDict(UserDict):
 
 
 class LookUpKeyDict(UserDict):
-    def __init__(self, data, value):
+    def __init__(self, value):
         super().__init__(data)
         self.value = value
+        self.dict_1 = data.UserDict
 
-    def lookup_key(self, data, value):
+    def lookup_key(self, value):
         keys = []
         for i in data:
-            # print(i)
+            print(i)
             if i == value:
                 keys.append(i)
         return keys
@@ -23,7 +24,6 @@ class LookUpKeyDict(UserDict):
 as_dict = UserDict()
 as_dict['a'] = 1
 as_dict['b'] = 2
-# print(as_dict)
-y = LookUpKeyDict(data=None, value=None)
-# y.LookUpKeyDict.lookup_key=(as_dict,'v')
-print(y.lookup_key(as_dict, 'a'))
+y = LookUpKeyDict('b')
+y.lookup_key = (as_dict, 'v')
+print(y.lookup_key())
