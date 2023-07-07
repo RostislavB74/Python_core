@@ -10,9 +10,16 @@ new_list = []
 
 
 def get_emails(list_contacts):
-    # for i in map(lambda elem: new_list.append(elem['email']), user):
-    for i in map(if elem[0] == "email": print(elem), list_contacts.items()):
-        print()
+    for elem in list_contacts:
+        print(elem)
+        if elem =='email':
+            new_list.append(list_contacts['email'])
+    return(new_list)
+
+                #    result = map(user, ('992', user.items()))
+    #    print(result)
+    #for i in map(lambda keys, value: new_list.append(value, user) if keys=='email'in list_contacts.items())
+        #print(new_list)
         # print(new_list)
 
         # return (new_list)
