@@ -7,11 +7,12 @@ class UserDict(UserDict):
 
 
 class LookUpKeyDict(UserDict):
-    # def __init__(self, value):
-    #     super().__init__(dict)
+    # def __init__(self, data):
+
     #     self.value = value
 
     def lookup_key(self, data, value):
+        super().__init__(data)
         data = data
         value = value
         keys = []
