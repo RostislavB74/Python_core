@@ -5,12 +5,14 @@ class Contacts:
     def __init__(self):
         self.contacts = []
 
-    def list_contacts(self):
-         return Contacts.add_contacts.contacts
+
+    def list_contacts(self, contacts):
+        
+        return self.contacts
         
 
     def add_contacts(self, name, phone, email, favorite=False):
-        contacts =[]
+        contacts = []
         ab={}
         ab['id']= Contacts.current_id
         ab['name'] = name
@@ -18,6 +20,7 @@ class Contacts:
         ab['email'] = email
         ab['favorite'] = favorite
         contacts.append(ab)
+        
         print (contacts)        
 
         Contacts.current_id+=1
