@@ -8,6 +8,7 @@ def add_id(id_list, employee_id):
         return id_list
     else:
         raise IDException
+    
     while True:
         try:
             employee_id= employee_id
