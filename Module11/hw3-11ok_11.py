@@ -13,6 +13,8 @@ class Point:
     def x(self, x):
         if (type(x) == int) or (type(x) == float):
             self.__x = x
+        else:
+            self.__x = None
 
     @property
     def y(self):
@@ -22,6 +24,8 @@ class Point:
     def y(self, y):
         if (type(y) == int) or (type(y) == float):
             self.__y = y
+        else:
+            self.__y = None
 
 
 class Vector:
@@ -29,29 +33,29 @@ class Vector:
         self.coordinates = coordinates
 
     def __setitem__(self, index, value):
-        self.index = index
-        print(self.index)
-        
-        if self.index==0:
-            x= value
-            print(f"x={x}")
-            return x
-        if self.index==1:
-            y= value
-            print(f"y={y}")
-            return y    #print(f"if {self.coordinates[self.index]}")
-        # else:
-        #     self.data[key] = [value]
-            
-        
-            
+         if index==0:
+            Point.x = value
+            return Point.x
+         if index==1:
+            Point.y = value
+            return Point.y
+         else:
+             return
 
     def __getitem__(self, index):
-        pass        
-            
+        if 0 <= index<= 1:
+            if index==0:
+                return self.coordinates.x
+            if index==1:
+                return self.coordinates.y
+        else:
+            return
 vector = Vector(Point(1, 10))
+
 # print(vector.coordinates.x)  # 1
 # print(vector.coordinates.y)  # 10
-vector[0] = 100
-vector[1] = 10  # Встановлюємо координату x вектора 10
-#print(vector.coordinates.x)
+
+vector[0] == 1  # Встановлюємо координату x вектора 10
+print(vector.coordinates.x)       
+        
+            
