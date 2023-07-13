@@ -42,11 +42,22 @@ class Vector:
             return self.coordinates.x
         if index == 1:
             return self.coordinates.y
-
+    
+    def __call__(self, value=None):
+        if value:
+            return self.coordinates.x*value, self.coordinates.y*value 
+        else:
+            return self.coordinates.x, self.coordinates.y 
+    
     def __str__(self):
         return f'Vector({self.coordinates.x},{self.coordinates.y})'
+     
+    
 point = Point(1,10)
 vector = Vector(point)
 
 print(point)  # Point(1,10)
 print(vector)  # Vector(1,10)
+vector = Vector(Point(1, 10))
+print(vector(5))
+print(vector())
