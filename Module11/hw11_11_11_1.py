@@ -102,9 +102,9 @@ class Iterable:
 
 
     def __next__(self):
-        if self.current_value < self.MAX_VALUE:
-            self.current_value += 1
-            return self.current_value
+        if self.current_index < self.MAX_VALUE:
+            self.current_index += 1
+            return self.current_index
         raise StopIteration
 
 
@@ -115,7 +115,7 @@ class RandomVectors:
 
     def __iter__(self):
         return Iterable()
-    for vector in :
+    for vector in vectors:
         print(vector)
 
 
