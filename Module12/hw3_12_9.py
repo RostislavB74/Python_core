@@ -30,18 +30,18 @@ def read_contacts_from_file(filename):
         contacts1={}
         reader = csv.DictReader(fh)
         for row in reader:
-            
-            for keys, value in row.items():
-                print (type(row.get(keys)))
-                #print (keys, value)
-                if keys =='favorite':
-                    value = bool(value)
-                    contacts1[keys] = value
-                    print(keys, type(value))
-                else:
-                    contacts1[keys] = value
-            result.append(contacts1)
-        print (contacts1)
+            row['favorite']= row["favorite"]==True
+            # for keys, value in row.items():
+            #     print (type(row.get(keys)))
+            #     #print (keys, value)
+            #     if keys =='favorite':
+            #         value = bool(value)
+            #         contacts1[keys] = value
+            #         print(keys, type(value))
+            #     else:
+            #         contacts1[keys] = value
+            result.append(row)
+        #print (contacts1)
         return result
 
 
