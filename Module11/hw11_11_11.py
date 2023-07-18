@@ -96,34 +96,28 @@ class Vector:
 class Iterable:
     def __init__(self, max_vectors, max_points):
         self.current_index = 0
-        self.vectors = []
+        self.vectors = [Vector(Point(randrange(0, max_points), randrange(
+            0, max_points))) for _ in range(max_vectors)]
+        self.max_vectors = max_vectors
 
     def __next__(self):
-        if self.current_value < self.MAX_VALUE:
-            self.current_value += 1
-            return self.current_value
+        if self.current_index < self.max_vectors:
+            vector = self.vectors[self.current_index]
+            self.current_index += 1
+            return vector
         raise StopIteration
 
 
-# RandomVectors(max_vectors: int, max_points: int) -> Iterable(max_vectors, max_points)
-
 class RandomVectors:
     def __init__(self, max_vectors=10, max_points=50):
-        # self. max_vectors = max_vectors
-        # self.max_points = max_points
-        pass
+        self.max_vectors = max_vectors
+        self.max_points = max_points
 
     def __iter__(self):
-        return Iterable
-
-
-for vector in vectors:
-    print(vector)
+        print(self.max_vectors, self.max_points)
+        return Iterable(self.max_vectors, self.max_points)
 
 
 vectors = RandomVectors(5, 10)
-Vector(7, 7)
-Vector(0, 0)
-Vector(8, 9)
-Vector(1, 9)
-Vector(6, 6)
+for vector in vectors:
+    print(vector)
