@@ -46,8 +46,8 @@ persons.save_to_file()
 person_from_file = persons.read_from_file()
 
 # Now, let's check if the data is correctly loaded from the file:
-for person in person_from_file:
-    print(person.name, person.email, person.phone, person.favorite)
+# for person in person_from_file:
+#     print(person.name, person.email, person.phone, person.favorite)
 print(f"persons_posle{person_from_file}")
 print(persons == person_from_file)  # False
 print(persons.contacts[0] == person_from_file.contacts[0])  # False
