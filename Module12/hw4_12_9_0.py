@@ -1,5 +1,5 @@
 import pickle
-filename = 'user_class.dat'
+filename = 'user_class0.dat'
 
 
 class Person:
@@ -12,32 +12,30 @@ class Person:
 
 class Contacts:
     def __init__(self, filename: str, contacts: list[Person] = None):
+        if contacts is None:
+            contacts = []
         self.filename = filename
-        self.file = open(filename)
-        self.contacts = contacts
-        if self.contacts is None:
-            self.contacts = []
 
     def save_to_file(self):
-        # print(self.contacts)
         with open(self.filename, "wb") as fh:
-            pickle.dump(self.contacts, fh)
+            pickle.dump(Contacts, fh)
 
     def read_from_file(self):
-        with open(self.filename, "rb") as f:
-            unpack_contacts = pickle.load(f)
-            print(unpack_contacts)
+        with open(self.filename, "rb") as fh:
+            unpack_contacts = pickle.load(fh)
+
         return unpack_contacts
 
     def __getstate__(self) -> object:
         # print(self.__dict__)
         attrs = self.__dict__.copy()
-        attrs['contacts'] = attrs
+
+        attrs[0] = 'contacts'
         return attrs
 
     def __setstate__(self, attrs):
         self.__dict__ = attrs
-        self.contacts = open(self.filename)
+        self.file = open(self.filename)
 
 
 contacts = [
@@ -60,13 +58,9 @@ persons = Contacts(filename, contacts)
 persons.save_to_file()
 person_from_file = persons.read_from_file()
 
-# print(f"persons_posle{person_from_file}")
-# print(persons == person_from_file)  # False
-# print(persons.contacts)
-# print(person_from_file)  # False
-# person_from_file.contacts[0].name  # True
-# print(persons.contacts[0].name)
-# == person_from_file.contacts[0].email)  # True
-# print(persons.contacts[0].email)
-# == person_from_file.contacts[0].phone)  # True
-# print(persons.contacts[0].phone)
+print(f"persons_posle{person_from_file}")
+print(persons == person_from_file)  # False
+print(persons.contacts[0] == person_from_file.contacts[0])  # False
+print(persons.contacts[0].name == person_from_file.contacts[0].name)  # True
+print(persons.contacts[0].email == person_from_file.contacts[0].email)  # True
+print(persons.contacts[0].phone == person_from_file.contacts[0].phone)  # True
