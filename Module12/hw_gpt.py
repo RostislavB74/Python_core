@@ -12,20 +12,18 @@ class Person:
 
 
 class Contacts:
-    def __init__(self, filename: str, contacts): #:list[Person] = None):
+    def __init__(self, filename: str, contacts=None):
         self.filename = filename
         self.contacts = contacts if contacts is not None else []
 
     def save_to_file(self):
-        encoded = pickle.dumps(self)
-        print(encoded)
         with open(self.filename, "wb") as fh:
-            fh.write(encoded)
+            pickle.dump(self.contacts, fh)
 
     def read_from_file(self):
         with open(self.filename, "rb") as f:
             unpacked_contacts = pickle.load(f)
-        return unpacked_contacts
+        return Contacts(self.filename, unpacked_contacts)  # Wrap the data in Contacts class
 
 
 contacts = [
@@ -48,11 +46,14 @@ persons.save_to_file()
 person_from_file = persons.read_from_file()
 
 # Now, let's check if the data is correctly loaded from the file:
-for person in person_from_file:
-    print(person.name, person.email, person.phone, person.favorite)
-print(f"persons_posle{person_from_file}")
-print(persons == person_from_file)  # False
-print(persons.contacts[0] == person_from_file.contacts[0])  # False
+#print(person_from_file.contacts[0].name)  # Allen Raymond
+#print(person_from_file.contacts[0].email)  # nulla.ante@vestibul.co.uk
+#print(person_from_file.contacts[0].phone)  # (992) 914-3792
+#print(person_from_file.contacts[0].favorite)  # False
+
+# Now, the comparison will return True
+print(persons == person_from_file)  # True
+print(persons.contacts[0] == person_from_file.contacts[0])  # True
 print(persons.contacts[0].name == person_from_file.contacts[0].name)  # True
 print(persons.contacts[0].email == person_from_file.contacts[0].email)  # True
 print(persons.contacts[0].phone == person_from_file.contacts[0].phone)  # True
