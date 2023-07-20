@@ -18,7 +18,7 @@ class Contacts:
 
     def save_to_file(self):
         with open(self.filename, "wb") as fh:
-            pickle.dump(self.contacts, fh)
+            pickle.dump(self, fh)
 
     def read_from_file(self):
         with open(self.filename, "rb") as f:
