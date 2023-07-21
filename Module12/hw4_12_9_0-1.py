@@ -1,6 +1,5 @@
 import pickle
-
-filename = 'user_class.dat'
+filename = 'user_class0.dat'
 
 
 class Person:
@@ -12,24 +11,31 @@ class Person:
 
 
 class Contacts:
-    def __init__(self, filename: str, contacts): #:list[Person] = None):
+    def __init__(self, filename: str, contacts: list[Person] = None):
+        if contacts is None:
+            contacts = []
         self.filename = filename
-        self.contacts = contacts if contacts is not None else []
 
     def save_to_file(self):
-        encoded = pickle.dumps(self)
-        print(encoded)
         with open(self.filename, "wb") as fh:
-<<<<<<< HEAD
-            pickle.dump(self, fh)
-=======
-            fh.write(encoded)
->>>>>>> e65f8bf0ece7d7fb6542c44255115f5d7660be42
+            pickle.dump(Contacts, fh)
 
     def read_from_file(self):
-        with open(self.filename, "rb") as f:
-            unpacked_contacts = pickle.load(f)
-        return unpacked_contacts
+        with open(self.filename, "rb") as fh:
+            unpack_contacts = pickle.load(fh)
+
+        return unpack_contacts
+
+    def __getstate__(self) -> object:
+        # print(self.__dict__)
+        attrs = self.__dict__.copy()
+
+        attrs[0] = 'contacts'
+        return attrs
+
+    def __setstate__(self, attrs):
+        self.__dict__ = attrs
+        self.file = open(self.filename)
 
 
 contacts = [
@@ -48,12 +54,10 @@ contacts = [
 ]
 persons = Contacts(filename, contacts)
 
+# persons = Contacts("user_class.dat", contacts)
 persons.save_to_file()
 person_from_file = persons.read_from_file()
 
-# Now, let's check if the data is correctly loaded from the file:
-for person in person_from_file:
-    print(person.name, person.email, person.phone, person.favorite)
 print(f"persons_posle{person_from_file}")
 print(persons == person_from_file)  # False
 print(persons.contacts[0] == person_from_file.contacts[0])  # False
