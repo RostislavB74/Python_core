@@ -20,7 +20,11 @@ class Contacts:
         encoded = pickle.dumps(self)
         print(encoded)
         with open(self.filename, "wb") as fh:
+<<<<<<< HEAD
+            pickle.dump(self, fh)
+=======
             fh.write(encoded)
+>>>>>>> e65f8bf0ece7d7fb6542c44255115f5d7660be42
 
     def read_from_file(self):
         with open(self.filename, "rb") as f:
