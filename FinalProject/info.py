@@ -1,6 +1,6 @@
 from datetime import datetime as dt
 import re
-from abc import ABC, abstractmethod
+#from abc import ABC, abstractmethod
 
 
 class Record:
@@ -25,9 +25,9 @@ class Record:
         return result.days
 
 
-class Field(ABC):
+class Field():
 
-    @abstractmethod
+    #@abstractmethod
     def __getitem__(self):
         pass
 
@@ -48,11 +48,13 @@ class Phone(Field):
             if value:
                 self.values = value
             else:
-                self.values = input("Phones(+48......... or +38..........) (multiple phones can be added with space between them. +48 pattern has 9 symbols after code): ")
+                self.values = input("Phones(+12digits) (Введіть номер телефона + і дванадцять цифр): ")
             try:
                 for number in self.values.split(' '):
-                    if re.match('^\+48\d{9}$', number) or re.match('^\\+38\d{10}$', number) or number == '':
-                        self.value.append(number)
+                    if re.match('^\+\d{12}$', number) or number == '':
+                        result = f"{number[0]}{number[1]}{number[2]}{number[3]}({number[4]}{number[5]}){number[6]}{number[7]}{number[8]}-{number[9]}{number[10]}-{number[11]}{number[12]}"
+                    # if re.match('^\+48\d{9}$', number) or re.match('^\\+38\d{10}$', number) or number == '':
+                        self.value.append(result)
                     else:
                         raise ValueError
             except ValueError:
@@ -97,7 +99,8 @@ class Email(Field):
             else:
                 self.value = input("Email: ")
             try:
-                if re.match('^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$', self.value) or self.value == '':
+                #if re.match('^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$', self.value) or self.value == '':
+                if re.match ("^[-a-z0-9!#$%&'*+/=?^_`{|}~]+(?:\.[-a-z0-9!#$%&'*+/=?^_`{|}~]+)*@(?:[a-z0-9]([-a-z0-9]{0,61}[a-z0-9])?\.)*(?:aero|arpa|asia|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|[a-z][a-z])$", self.value) or self.value == '':
                     break
                 else:
                     raise ValueError

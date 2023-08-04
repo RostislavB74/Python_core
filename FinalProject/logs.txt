@@ -68,3 +68,50 @@
 [14:55:43] Addressbook has been loaded!
 [13:14:03] Addressbook has been loaded!
 [10:45:29] Addressbook has been loaded!
+[10:54:08] Addressbook has been loaded!
+[10:55:24] Contact rostyslav has been added.
+[10:55:24] Addressbook has been saved!
+[10:56:54] Addressbook has been loaded!
+[10:59:35] Contact qqq has been added.
+[10:59:35] Addressbook has been saved!
+[11:05:55] Addressbook has been loaded!
+[11:48:36] Contact rostnik has been added.
+[11:48:36] Addressbook has been saved!
+[11:59:11] Addressbook has been loaded!
+[12:00:07] Addressbook has been loaded!
+[12:00:55] Addressbook has been loaded!
+[12:01:40] Addressbook has been loaded!
+[12:02:47] Contact eee has been added.
+[12:02:47] Addressbook has been saved!
+[12:03:44] Addressbook has been saved!
+[12:03:59] Addressbook has been loaded!
+[14:51:06] Addressbook has been loaded!
+[14:52:35] Contact eeeeeee has been added.
+[14:52:35] Addressbook has been saved!
+[14:53:03] Addressbook has been loaded!
+[14:56:05] Contact werty has been added.
+[14:56:05] Addressbook has been saved!
+[14:58:21] Contact qwert has been added.
+[14:58:21] Addressbook has been saved!
+[15:04:12] Addressbook has been loaded!
+[15:06:00] Addressbook has been loaded!
+[15:08:08] Contact qqqqqqq has been added.
+[15:08:08] Addressbook has been saved!
+[15:08:15] Addressbook has been loaded!
+[15:10:11] Contact sdsdfdg has been added.
+[15:10:11] Addressbook has been saved!
+[15:10:18] Addressbook has been loaded!
+[15:10:47] Addressbook has been loaded!
+[15:11:38] Addressbook has been loaded!
+[15:12:21] Contact asfdffs has been added.
+[15:12:21] Addressbook has been saved!
+[15:16:50] Addressbook has been loaded!
+[15:17:36] Addressbook has been loaded!
+[15:21:18] Addressbook has been loaded!
+[15:31:42] Addressbook has been loaded!
+[15:31:56] Contact asfdsfsdg has been added.
+[15:31:56] Addressbook has been saved!
+[15:52:53] Addressbook has been loaded!
+[15:53:44] Contact hhohh has been added.
+[15:53:44] Addressbook has been saved!
+[15:55:00] Addressbook has been saved!
